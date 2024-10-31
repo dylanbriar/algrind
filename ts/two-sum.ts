@@ -11,8 +11,8 @@
 */
 
 //brute force solution, O(n^2)
-const twoSumBrute = (arr, target) => { 
-  for (let i in arr){
+const twoSumBrute = (arr: number[], target: number): boolean => { 
+  for (let i = 0; i < arr.length; i++){
     for (let j = i+1; j < arr.length; j++){
       if (i+j === target){
         return true;
@@ -22,17 +22,20 @@ const twoSumBrute = (arr, target) => {
   return false;
 }
 
+type IndexMap<T> = {
+  [index: number]: T,
+}
 //two-pass map solution, O(n)
-const twoSum = (arr, target) => {
+const twoSum = (arr: number[], target: number): boolean | number[] => {
   //initialize the map to be built
-  const numberToIndex = {};
+  const numberToIndex: IndexMap<number> = {};
   //build out the map
-  for (let i in arr){
-    numberToIndex[nums[i]] = i;
+  for (let i = 0; i < arr.length; i++){
+    numberToIndex[arr[i]] = i;
   }
   //loop over given array and check if its pair to reach the target exists
-  for (let i in arr){
-    const numberNeeded = target - nums[i];
+  for (let i = 0; i < arr.length; i++){
+    const numberNeeded = target - arr[i];
 
     if (numberToIndex[numberNeeded] && numberToIndex[numberNeeded] !== i) {
       return [i, numberToIndex[numberNeeded]];
@@ -66,4 +69,4 @@ const threeSum = (arr, target) => {
 }
 
 
-module.exports = { twoSum, threeSum };
+// module.exports = { twoSum, threeSum };
