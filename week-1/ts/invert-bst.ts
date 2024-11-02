@@ -27,14 +27,16 @@ function invertTreeTS (root: BSTNode): BSTNode {
   if (!root) return root;
   if (root.left){
       if (root.left.left || root.left.right){
-          invertTree(root.left);
+          invertTreeTS(root.left);
       }
   }
   if (root.right){
       if (root.right.left || root.right.right){
-          invertTree(root.right);
+          invertTreeTS(root.right);
       }
   }
+  //what's interesting is that you can take the next three lines and move them up to between the if (!root) and the if (root.left) and it still works
+  //the only difference is that the switching is done before moving on to the next node, but in truth it doesn't matter whether it's done before or after
   let dummy: BSTNode | null | undefined = root.left;
   root.left = root.right;
   root.right = dummy;

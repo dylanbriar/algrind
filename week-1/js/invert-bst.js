@@ -29,6 +29,8 @@ const invertTree = function(root) {
           invertTree(root.right);
       }
   }
+  //what's interesting is that you can take the next three lines and move them up to between the if (!root) and the if (root.left) and it still works
+  //the only difference is that the switching is done before moving on to the next node, but in truth it doesn't matter whether it's done before or after
   let dummy = root.left;
   root.left = root.right;
   root.right = dummy;
