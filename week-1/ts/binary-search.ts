@@ -6,3 +6,6 @@ function binSearch(nums: Number[], tgt: Number): Number{
   if (nums[right] === tgt) return right;
   let left: Number = 0;
   if (nums[left] === tgt) return left;
+  let mid: Number = Math.floor(right/2);
+  if (nums[mid] === tgt) return mid;
+  
