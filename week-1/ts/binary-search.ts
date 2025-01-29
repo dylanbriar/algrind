@@ -8,4 +8,16 @@ function binSearch(nums: Number[], tgt: Number): Number{
   if (nums[left] === tgt) return left;
   let mid: Number = Math.floor(right/2);
   if (nums[mid] === tgt) return mid;
-  
+  while (right > left){
+    if (nums[mid] > tgt){
+      right = mid; 
+      mid = left + Math.floor((right-left)/2);
+    }
+    else if (nums[mid] < tgt){
+      left = mid;
+      mid = left + Math.floor((right-left)/2);
+    }
+    else return mid;
+  }
+  return -1;
+}
