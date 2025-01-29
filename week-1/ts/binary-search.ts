@@ -3,3 +3,6 @@
 function binSearch(nums: Number[], tgt: Number): Number{
   if (nums.length < 1) throw new Error('No values to search');
   let right: Number = nums.length - 1;
+  if (nums[right] === tgt) return right;
+  let left: Number = 0;
+  if (nums[left] === tgt) return left;
