@@ -1,6 +1,6 @@
-/**
- * @param {string} s
- * @return {boolean}
+/*
+heres the blog i wrote on this: 
+https://medium.com/@dylan.e.briar/jeff-goldblum-inspired-algos-valid-palindrome-lc-125-solutions-comparison-eb3dffa26fa0
  */
 function isPalindrome (s) {
   //this could be /[\W\s]+/gi but for whatever reason that doesnt cover underscores, so we gotta get real specific
