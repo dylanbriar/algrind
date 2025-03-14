@@ -22,14 +22,13 @@ const twoSumBrute = (arr: number[], target: number): boolean => {
   return false;
 }
 
+//two-pass map solution, O(n)
 type IndexMap<T> = {
   [index: number]: T,
 }
-//two-pass map solution, O(n)
 const twoSum = (arr: number[], target: number): boolean | number[] => {
-  //initialize the map to be built
+  //initialize then build out map
   const numberToIndex: IndexMap<number> = {};
-  //build out the map
   for (let i = 0; i < arr.length; i++){
     numberToIndex[arr[i]] = i;
   }
@@ -43,9 +42,6 @@ const twoSum = (arr: number[], target: number): boolean | number[] => {
   }
   return false;
 }
-
-// const nums = [2, 5, 11, 15]
-// console.log(twoSum(nums, 16))
 
 //there is a one pass solution, but it doesn't make a difference in Big(O) notation, and is kind of mentally taxing so not really great for interviews anyway
 
