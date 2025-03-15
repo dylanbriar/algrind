@@ -43,7 +43,7 @@ const twoSum = (arr: number[], target: number): boolean | number[] => {
   return false;
 }
 
-//there is a one pass solution, but it doesn't make a difference in Big(O) notation, and is kind of mentally taxing so not really great for interviews anyway
+//there is a one pass solution, but it doesn't make a difference in Big(O) notation, and is kind of mentally taxing to read so not really great for interviews
 
 //here it is anyway 
 // function twoSum(nums, target) {
@@ -56,7 +56,7 @@ const twoSum = (arr: number[], target: number): boolean | number[] => {
 // }
 
 // Given an array of numbers and a target number, return true if three of the numbers in the array add up to the target. Otherwise, return false.
-//i dont know what the fuck im doing here
+//needs testing
 const threeSum = (arr, target) => { 
   for (let i = 0; i < arr.length; i++){
     const newTgt = target - arr[i]; 
